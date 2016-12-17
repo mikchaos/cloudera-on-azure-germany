@@ -88,21 +88,21 @@
     },
     "addressPrefix": {
       "type": "string",
-      "defaultValue": "10.3.0.0/16",
+      "defaultValue": "10.40.2.0/24",
       "metadata": {
         "description": "Virtual Network address CIDR"
       }
     },
     "subnetPrefix": {
       "type": "string",
-      "defaultValue": "10.3.0.0/16",
+      "defaultValue": "10.40.2.0/25",
       "metadata": {
         "description": "CIDR for the subnet where VMs will be placed"
       }
     },
     "masterNodeIPAddress": {
       "type": "string",
-      "defaultValue": "10.3.0.4",
+      "defaultValue": "10.40.2.5",
       "metadata": {
         "description": "IP address for the first master"
       }
@@ -134,7 +134,7 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_DS13",
+      "defaultValue": "Standard_DS13_v2",
       "metadata": {
         "description": "The size of the VMs deployed in the cluster (defaults to Standard_DS13)"
       }
@@ -226,7 +226,7 @@
     "installCDH":"True",
     "addressPrefix":"[parameters('addressPrefix')]",
     "subnetPrefix":"[parameters('subnetPrefix')]",
-    "scriptsUri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/cloudera-on-centos",
+    "scriptsUri": "https://raw.githubusercontent.com/mikchaos/cloudera-on-azure-germany/master/cloudera-on-centos",
     "share-resourcesUri": "[concat(variables('scriptsUri'), '/shared-resources-', parameters('vnetNewOrExisting'), '-vnet.json')]",
     "data-nodeUri":"[concat(variables('scriptsUri'), '/data-node-', toLower(subString(parameters('vmSize'), 9, 4)), '.json')]",
     "sa": "[parameters('masterNodeIPAddress')]",

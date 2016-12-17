@@ -33,7 +33,7 @@
       "value": "Eval"
     },
     "vmSize": {
-      "value": "Standard_DS14"
+      "value": "Standard_DS14_v2"
     },
     "company": {
       "value": "company"
