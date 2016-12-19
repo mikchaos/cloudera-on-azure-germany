@@ -229,7 +229,11 @@
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[concat(variables('vmName'), copyIndex())]",
-      
+      "plan": {
+        "name": "OpenLogic-centos-6.7",
+        "publisher": "RedHat",
+        "product": "OpenLogic-centos-6.7"
+      },
       "location": "[resourceGroup().location]",
       "copy": {
         "name": "dataNodeNicLoop",
