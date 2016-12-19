@@ -327,8 +327,8 @@
           "imageReference": {
             "publisher": "Redhat",
             "offer": "RHEL",
-            "sku": "6.8",
-            "version": "6.8.20161028"
+            "sku": "7.2",
+            "version": "7.2.20161026"
           },
           "osDisk": {
             "name": "osdisk",
