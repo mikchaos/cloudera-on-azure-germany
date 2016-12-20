@@ -256,10 +256,10 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "Redhat",
-            "offer": "RHEL",
-            "sku": "7.2",
-            "version": "7.2.20161026"
+            "publisher": "OpenLogic",
+            "offer": "centos",
+            "sku": "6.7",
+            "version": "6.7.20160310"
           },
           "osDisk": {
             "name": "osdisk",
