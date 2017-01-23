@@ -156,7 +156,7 @@
       "adminPassword": "[parameters('adminPassword')]",
       "masterNodeASName": "[concat(parameters('dnsNamePrefix'), '-mnAS')]",
       "dataNodeASName": "[concat(parameters('dnsNamePrefix'), '-dnAS')]",
-	  "dataNodeID":"[parameters('dataNodeID']"
+	  "dataNodeID":"[parameters('dataNodeID')]"
     },
     "networkSpec": {
       "addressPrefix": "[variables('addressPrefix')]",
