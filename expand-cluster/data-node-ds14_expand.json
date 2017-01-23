@@ -97,7 +97,7 @@
     {
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "name": "[concat(variables('nicName'), add(copyIndex(),variables('dataNodeID'))]",
+      "name": "[concat(variables('nicName'), add(copyIndex(),variables('dataNodeID')))]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'), add(copyIndex(),variables('dataNodeID')))]",
