@@ -301,7 +301,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vmName'), add(copyIndex(),'dataNodeID'), '/prepareDisks')]",
+      "name": "[concat(variables('vmName'), add(copyIndex(), variables('dataNodeID')), '/prepareDisks')]",
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "location": "[resourceGroup().location]",
       "copy": {
@@ -309,7 +309,7 @@
         "count": "[parameters('vmCount')]"
       },
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'), copyIndex())]"
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'), add(copyIndex(),variables('dataNodeID')))]"
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
