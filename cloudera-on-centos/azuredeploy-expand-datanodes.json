@@ -86,8 +86,8 @@
       "defaultValue": "10.40.2.5",
       "metadata": {
         "description": "IP address for the first data node"
-      }, 
-    ,
+      } 
+    },
     "tshirtSize": {
       "type": "string",
       "defaultValue": "Eval",
@@ -178,7 +178,6 @@
       "name": "data-node",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "[variables('templateAPIVersion')]",
-     ,
       "properties": {
         "mode": "Incremental",
         "templateLink": {
