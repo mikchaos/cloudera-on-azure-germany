@@ -67,7 +67,7 @@
     },
     {
       "type": "Microsoft.Storage/storageAccounts",
-      "name": "[concat(add(copyIndex(),dataNodeID), variables('storageAccountName'))]",
+      "name": "[concat(add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'))]",
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "location": "[resourceGroup().location]",
       "copy": {
@@ -90,7 +90,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('dnsNamePrefix'), '-dn', add(copyIndex(),dataNodeID))]"
+          "domainNameLabel": "[concat(parameters('dnsNamePrefix'), '-dn', add(copyIndex(),variables('dataNodeID')))]"
         }
       }
     },
@@ -100,7 +100,7 @@
       "name": "[concat(variables('nicName'), copyIndex())]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'), add(copyIndex(),dataNodeID))]",
+        "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'), add(copyIndex(),variables('dataNodeID')))]",
         "[concat('Microsoft.Network/networkSecurityGroups/', variables('securityGroupName'))]"
       ],
       "copy": {
@@ -131,7 +131,7 @@
     {
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[concat(variables('vmName'), add(copyIndex(),dataNodeID))]",
+      "name": "[concat(variables('vmName'), add(copyIndex(),variables('dataNodeID')))]",
       
       "location": "[resourceGroup().location]",
       "copy": {
@@ -139,7 +139,7 @@
         "count": "[parameters('vmCount')]"
       },
       "dependsOn": [
-        "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), add(copyIndex(),dataNodeID))]",
+        "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), add(copyIndex(),variables('dataNodeID')))]",
         "[concat('Microsoft.Storage/storageAccounts/', copyIndex(), variables('storageAccountName'))]"
       ],
       "properties": {
