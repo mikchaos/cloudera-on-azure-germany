@@ -135,10 +135,6 @@
     "ipOctet2": "[int(split(variables('sa'), '.')[2])]",
     "ipOctet3": "[int(split(variables('sa'), '.')[3])]",
     "datanodeIpOctet3":"[variables('ipOctet3')]",
-    "masterStorageAccount": {
-      "prefix": "[parameters('storageAccountPrefix')]",
-      "type": "[parameters('masterStorageAccountType')]"
-    },
     "workerStorageAccount": {
       "prefix": "[parameters('storageAccountPrefix')]",
       "type": "[parameters('workerStorageAccountType')]"
