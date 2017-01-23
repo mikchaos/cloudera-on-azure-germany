@@ -167,7 +167,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds/', variables('vmName'), copyIndex(), '.vhd')]"
+              "uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds/', variables('vmName'), add(copyIndex(),variables('dataNodeID')), '.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
