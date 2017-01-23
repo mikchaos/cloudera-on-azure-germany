@@ -10,11 +10,6 @@ mountDriveForLogCloudera()
   mkdir $dirname
   mount -o noatime,barrier=1 -t ext4 $drivename $dirname
   UUID=`sudo lsblk -no UUID $drivename`
-  echo "Log Device debug:"
-  sudo lsblk -no UUID $drivename
-  echo "UUID=$UUID"
-  echo "parameter=$1"
-  echo "drivename=$drivename"
   echo "UUID=$UUID   $dirname    ext4   defaults,noatime,barrier=0 0 1" | sudo tee -a /etc/fstab
   mkdir /log/cloudera
   ln -s /log/cloudera /opt/cloudera
