@@ -140,7 +140,7 @@
       },
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), add(copyIndex(),variables('dataNodeID')))]",
-        "[concat('Microsoft.Storage/storageAccounts/', copyIndex(), variables('storageAccountName'))]"
+        "[concat('Microsoft.Storage/storageAccounts/', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'))]"
       ],
       "properties": {
         "availabilitySet": {
@@ -167,7 +167,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds/', variables('vmName'), copyIndex(), '.vhd')]"
+              "uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds/', variables('vmName'), copyIndex(), '.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -178,7 +178,7 @@
               "diskSizeGB": "512",
               "lun": 0,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds0/', variables('vmName'), '-datadisk0.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds0/', variables('vmName'), '-datadisk0.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -187,7 +187,7 @@
               "diskSizeGB": "1023",
               "lun": 1,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds1/', variables('vmName'), '-datadisk1.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds1/', variables('vmName'), '-datadisk1.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -196,7 +196,7 @@
               "diskSizeGB": "1023",
               "lun": 2,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds2/', variables('vmName'), '-datadisk2.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds2/', variables('vmName'), '-datadisk2.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -205,7 +205,7 @@
               "diskSizeGB": "1023",
               "lun": 3,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds3/', variables('vmName'), '-datadisk3.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds3/', variables('vmName'), '-datadisk3.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -214,7 +214,7 @@
               "diskSizeGB": "1023",
               "lun": 4,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds4/', variables('vmName'), '-datadisk4.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds4/', variables('vmName'), '-datadisk4.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -223,7 +223,7 @@
               "diskSizeGB": "1023",
               "lun": 5,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds5/', variables('vmName'), '-datadisk5.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds5/', variables('vmName'), '-datadisk5.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -232,7 +232,7 @@
               "diskSizeGB": "1023",
               "lun": 6,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds6/', variables('vmName'), '-datadisk6.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds6/', variables('vmName'), '-datadisk6.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -241,7 +241,7 @@
               "diskSizeGB": "1023",
               "lun": 7,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds7/', variables('vmName'), '-datadisk7.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds7/', variables('vmName'), '-datadisk7.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -250,7 +250,7 @@
               "diskSizeGB": "1023",
               "lun": 8,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds8/', variables('vmName'), '-datadisk8.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds8/', variables('vmName'), '-datadisk8.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -259,7 +259,7 @@
               "diskSizeGB": "1023",
               "lun": 9,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds9/', variables('vmName'), '-datadisk9.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds9/', variables('vmName'), '-datadisk9.vhd')]"
               },
               "createOption": "Empty"
             },
@@ -268,7 +268,7 @@
               "diskSizeGB": "1023",
               "lun": 10,
               "vhd": {
-                "Uri": "[concat('http://', copyIndex(), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds10/', variables('vmName'), '-datadisk10.vhd')]"
+                "Uri": "[concat('http://', add(copyIndex(),variables('dataNodeID')), variables('storageAccountName'), '.blob.core.cloudapi.de/vhds10/', variables('vmName'), '-datadisk10.vhd')]"
               },
               "createOption": "Empty"
             }
@@ -277,7 +277,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('nicName'), copyIndex()))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('nicName'), add(copyIndex(),variables('dataNodeID'))))]"
             }
           ],
           "inputEndpoints": [
