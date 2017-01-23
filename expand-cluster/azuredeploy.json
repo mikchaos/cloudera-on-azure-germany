@@ -88,6 +88,13 @@
         "description": "IP address for the first data node"
       } 
     },
+	"dataNodeID": {
+      "type": "int",
+      "defaultValue": "6",
+      "metadata": {
+        "description": "The ID of the first new data node. Will be used to generate VM Name. If you currently have xxx-dn5, you'd want to put 6 in here."
+      } 
+    },
     "tshirtSize": {
       "type": "string",
       "defaultValue": "Eval",
@@ -152,7 +159,8 @@
       "adminUserName": "[parameters('adminUserName')]",
       "adminPassword": "[parameters('adminPassword')]",
       "masterNodeASName": "[concat(parameters('dnsNamePrefix'), '-mnAS')]",
-      "dataNodeASName": "[concat(parameters('dnsNamePrefix'), '-dnAS')]"
+      "dataNodeASName": "[concat(parameters('dnsNamePrefix'), '-dnAS')]",
+	  "dataNodeID":"[parameters('dataNodeID']"
     },
     "networkSpec": {
       "addressPrefix": "[variables('addressPrefix')]",
