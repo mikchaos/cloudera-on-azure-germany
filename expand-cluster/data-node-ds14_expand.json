@@ -301,7 +301,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vmName'), copyIndex(), '/prepareDisks')]",
+      "name": "[concat(variables('vmName'), add(copyIndex(),'dataNodeID'), '/prepareDisks')]",
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "location": "[resourceGroup().location]",
       "copy": {
