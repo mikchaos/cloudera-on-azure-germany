@@ -12,11 +12,6 @@ Once the trial has concluded, the Cloudera Enterprise features will be disabled 
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
 
-# Extend your cluster (DS14_v2 deployment)
-<a href="https://portal.microsoftazure.de/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmikchaos%2Fcloudera-on-azure-germany%2Fmaster%2Fcloudera-on-centos%2Fazuredeploy-expand-datanodes.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png" />
-</a>
-
 Version 2016-05-26
 
 END USER LICENSE TERMS AND CONDITIONS

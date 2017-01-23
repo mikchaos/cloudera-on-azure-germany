@@ -120,7 +120,7 @@
     "installCDH":"True",
     "addressPrefix":"[parameters('addressPrefix')]",
     "subnetPrefix":"[parameters('subnetPrefix')]",
-    "scriptsUri": "https://raw.githubusercontent.com/mikchaos/cloudera-on-azure-germany/master/cloudera-on-centos",
+    "scriptsUri": "https://raw.githubusercontent.com/mikchaos/cloudera-on-azure-germany/master/expand-cluster",
     "share-resourcesUri": "[concat(variables('scriptsUri'), '/shared-resources-', parameters('vnetNewOrExisting'), '-vnet.json')]",
     "data-nodeUri":"[concat(variables('scriptsUri'), '/data-node-', toLower(subString(parameters('vmSize'), 9, 4)), '_expand.json')]",
     "sa": "[parameters('dataNodeIPAddress')]",
