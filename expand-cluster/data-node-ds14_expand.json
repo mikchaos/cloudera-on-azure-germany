@@ -81,7 +81,7 @@
     {
       "apiVersion": "[parameters('resourceAPIVersion')]",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[concat(variables('publicIPAddressName'), copyIndex())]",
+      "name": "[concat(variables('publicIPAddressName'), add(copyIndex(),variables('dataNodeID'))]",
       "location": "[resourceGroup().location]",
       "copy": {
         "name": "publicIPLoop",
