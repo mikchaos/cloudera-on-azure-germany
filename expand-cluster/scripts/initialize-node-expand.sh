@@ -23,6 +23,19 @@ ADMINUSER=$7
 NODETYPE=$8
 ADPASSWORD=$9
 
+echo "parameters:"
+echo $MASTERIP
+echo $WORKERIP
+echo $NAMEPREFIX
+echo $NAMESUFFIX
+echo $MASTERNODES
+echo $DATANODES
+echo $ADMINUSER
+echo $NODETYPE
+echo $ADAPASSWORD
+
+
+
 function atoi
 {
 #Returns the integer representation of an IP arg, passed in ascii dotted-decimal notation (x.x.x.x)
