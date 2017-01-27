@@ -1,5 +1,7 @@
 #!/bin/bash
 
+adpassword=$1
+
 echo "Starting the final script to join AD and install Kerberos libraries"
 
 echo "changing network config"
@@ -44,7 +46,7 @@ admin_server = 10.40.0.4
 
 hostname=`hostname`
 
-echo -n 'HelloWorld123!' | sudo adcli join CLOUDERA.LOCAL -U da --stdin-password --verbose --show-details --host-fqdn $hostname
+echo -n $adpassword | sudo adcli join CLOUDERA.LOCAL -U da --stdin-password --verbose --show-details --host-fqdn $hostname
 
 sudo touch /etc/sssd/sssd.conf
 
