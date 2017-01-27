@@ -21,6 +21,7 @@ MASTERNODES=$5
 DATANODES=$6
 ADMINUSER=$7
 NODETYPE=$8
+ADPASSWORD=$9
 
 function atoi
 {
@@ -151,6 +152,8 @@ myhostname=`hostname`
 fqdnstring=`python -c "import socket; print socket.getfqdn('$myhostname')"`
 sed -i "s/.*HOSTNAME.*/HOSTNAME=${fqdnstring}/g" /etc/sysconfig/network
 /etc/init.d/network restart
+
+ bash ./finalize-setup.sh $ADPASSWORD >> /home/$ADMINUSER/finalize-datanode.log 2>&1
 
 #disable password authentication in ssh
 #sed -i "s/UsePAM\s*yes/UsePAM no/" /etc/ssh/sshd_config

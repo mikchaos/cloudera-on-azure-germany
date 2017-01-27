@@ -326,8 +326,7 @@
             "[concat(parameters('scriptsUri'), '/scripts/initialize-node-expand.sh')]",
 			"[concat(parameters('scriptsUri'), '/scripts/finalize-setup.sh')]"
           ],
-          "commandToExecute": "[concat('sh initialize-node-expand.sh \"', variables('masterIP'), '\" \"', variables('workerIP'), '\" \"', parameters('dnsNamePrefix'), '\" \"', reference(concat(variables('publicIPAddressName'), add(copyIndex(),variables('dataNodeID')))).dnsSettings.fqdn, '\" ', parameters('clusterSpec').masterNodeCount, ' ', parameters('clusterSpec').dataNodeCount, ' \"', parameters('vmSpec').adminUserName, '\" ', 'datanode', ' >> /home/$ADMINUSER/initialize-datanode.log 2>&1')]",
-		  "commandToExecute": "[concat('sh finalize-setup.sh ', variables('adpassword'))]" 
+          "commandToExecute": "[concat('sh initialize-node-expand.sh \"', variables('masterIP'), '\" \"', variables('workerIP'), '\" \"', parameters('dnsNamePrefix'), '\" \"', reference(concat(variables('publicIPAddressName'), add(copyIndex(),variables('dataNodeID')))).dnsSettings.fqdn, '\" ', parameters('clusterSpec').masterNodeCount, ' ', parameters('clusterSpec').dataNodeCount, ' \"', parameters('vmSpec').adminUserName, '\" ', 'datanode', '\"', variables('adpassword'), '\" ', ' >> /home/$ADMINUSER/initialize-datanode.log 2>&1')]",
 		}
       }
     }
