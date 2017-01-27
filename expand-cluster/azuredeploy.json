@@ -15,6 +15,12 @@
         "description": "Admin password for the VMs (A mix of upper and lower-case characters, digits and symbols)"
       }
     },
+    "adpassword": {
+      "type": "string",
+      "metadata": {
+        "description": "Password for Active Directory user da to join Machine to Domain"
+      }
+    },
     "storageAccountPrefix": {
       "type": "string",
       "metadata": {
@@ -127,6 +133,7 @@
     "installCDH":"True",
     "addressPrefix":"[parameters('addressPrefix')]",
     "subnetPrefix":"[parameters('subnetPrefix')]",
+	"adpassword":"[parameters('adpassword')]",
     "scriptsUri": "https://raw.githubusercontent.com/mikchaos/cloudera-on-azure-germany/master/expand-cluster",
     "share-resourcesUri": "[concat(variables('scriptsUri'), '/shared-resources-', parameters('vnetNewOrExisting'), '-vnet.json')]",
     "data-nodeUri":"[concat(variables('scriptsUri'), '/data-node-', toLower(subString(parameters('vmSize'), 9, 4)), '_expand.json')]",
@@ -215,7 +222,10 @@
           },
           "clusterSpec": {
             "value": "[variables('clusterSpec')]"
-          }
+          },
+		  "adpassword": {
+			"value": "[variables('adpassword')]"
+    },
         }
       }
     }
