@@ -153,6 +153,9 @@ fqdnstring=`python -c "import socket; print socket.getfqdn('$myhostname')"`
 sed -i "s/.*HOSTNAME.*/HOSTNAME=${fqdnstring}/g" /etc/sysconfig/network
 /etc/init.d/network restart
 
+echo "ADPASSWORD"
+echo $ADPASSWORD
+
  bash ./finalize-setup.sh $ADPASSWORD >> /home/$ADMINUSER/finalize-datanode.log 2>&1
 
 #disable password authentication in ssh
