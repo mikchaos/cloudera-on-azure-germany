@@ -225,7 +225,7 @@
           },
 		  "adpassword": {
 			"value": "[variables('adpassword')]"
-    },
+		  }	
         }
       }
     }
