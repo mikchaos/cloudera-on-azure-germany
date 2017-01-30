@@ -15,6 +15,10 @@ longhostname=`hostname`
 shorthostname=$(echo $longhostname | awk -F: '{ st = index($0,"."); print substr($0,0,st-1)}')
 sudo hostnamectl set-hostname $shorthostname
 
+
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6" | sudo tee /etc/hosts
+
 echo "Installing Kerberos and sssd libraries"
 sudo yum -y install sssd sssd-client adcli krb5-workstation krb5-libs krb5-auth-dialog
 

@@ -9,7 +9,8 @@ mountDriveForLogCloudera()
   mke2fs -F -t ext4 -b 4096 -E lazy_itable_init=1 -O sparse_super,dir_index,extent,has_journal,uninit_bg -m1 $drivename
   mkdir $dirname
   mount -o noatime,barrier=1 -t ext4 $drivename $dirname
-  UUID=`sudo lsblk -no UUID $drivename`
+  #UUID=`sudo lsblk -no UUID $drivename`
+  UUID=$(/sbin/blkid|grep $drivename |awk '{print $2}'|awk -F\= '{print $2}'|sed -e"s/\"//g")
   echo "Log Device debug:"
   sudo lsblk -no UUID $drivename
   echo "UUID=$UUID"
